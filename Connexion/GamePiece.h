@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 @class Player, GameBoard, GamePieceView;
 
-enum State {emptySlot, redPiece, blackPiece};
+enum State {empty, red, black};
 
 @interface GamePiece : UIView
 

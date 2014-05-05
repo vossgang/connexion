@@ -133,7 +133,7 @@
     for (positionInMatrix.x = 0; positionInMatrix.x < 7; positionInMatrix.x++) {
         for (positionInMatrix.y = 0 ; positionInMatrix.y < 6; positionInMatrix.y++) {
             
-            [_gameBoard setState:blackPiece forPieceAt:positionInMatrix];
+            [_gameBoard setState:black forPieceAt:positionInMatrix];
             
             XCTAssertNotEqual([_gameBoard getStateForPieceAt:positionInMatrix], emptySlot, @"piece state should be populated");
         }

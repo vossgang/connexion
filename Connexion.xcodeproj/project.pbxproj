@@ -27,8 +27,6 @@
 		1BE2F2041917F6BF009FB85F /* GameBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE2F2021917F6BF009FB85F /* GameBoard.m */; };
 		1BE2F2071917F6CE009FB85F /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE2F2061917F6CE009FB85F /* Player.m */; };
 		1BE2F2081917F6CE009FB85F /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE2F2061917F6CE009FB85F /* Player.m */; };
-		1BE2F20B19181D1F009FB85F /* GamePieceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE2F20A19181D1F009FB85F /* GamePieceView.m */; };
-		1BE2F20C19181D1F009FB85F /* GamePieceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE2F20A19181D1F009FB85F /* GamePieceView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,8 +65,6 @@
 		1BE2F2021917F6BF009FB85F /* GameBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBoard.m; sourceTree = "<group>"; };
 		1BE2F2051917F6CE009FB85F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		1BE2F2061917F6CE009FB85F /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
-		1BE2F20919181D1F009FB85F /* GamePieceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePieceView.h; sourceTree = "<group>"; };
-		1BE2F20A19181D1F009FB85F /* GamePieceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePieceView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,8 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				1BE2F1D01917F304009FB85F /* Main.storyboard */,
-				1BE2F20919181D1F009FB85F /* GamePieceView.h */,
-				1BE2F20A19181D1F009FB85F /* GamePieceView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -301,7 +295,6 @@
 				1BE2F1D51917F304009FB85F /* ViewController.m in Sources */,
 				1BE2F2031917F6BF009FB85F /* GameBoard.m in Sources */,
 				1BE2F1CF1917F304009FB85F /* AppDelegate.m in Sources */,
-				1BE2F20B19181D1F009FB85F /* GamePieceView.m in Sources */,
 				1BE2F2071917F6CE009FB85F /* Player.m in Sources */,
 				1BE2F1CB1917F304009FB85F /* main.m in Sources */,
 			);
@@ -315,7 +308,6 @@
 				1BE2F2001917F6B1009FB85F /* GamePiece.m in Sources */,
 				1BE2F2041917F6BF009FB85F /* GameBoard.m in Sources */,
 				1BE2F1EA1917F304009FB85F /* ConnexionTests.m in Sources */,
-				1BE2F20C19181D1F009FB85F /* GamePieceView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +504,7 @@
 				1BE2F1EF1917F304009FB85F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1BE2F1F01917F304009FB85F /* Build configuration list for PBXNativeTarget "ConnexionTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +513,7 @@
 				1BE2F1F21917F304009FB85F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

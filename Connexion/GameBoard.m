@@ -26,11 +26,11 @@
         _players = @ [[[Player alloc] initWithColor:[UIColor redColor] andPieceCount:21],
                       [[Player alloc] initWithColor:[UIColor blackColor] andPieceCount:21]];
         
-        CGPoint slot;
-        for (slot.x = 0; slot.x < ROWS; slot.x++) {
-            for (slot.y = 0; slot.y < COLUMNS; slot.y++) {
-                matrix[(int)slot.x][(int)slot.y]        = [GamePiece new];
-                matrix[(int)slot.x][(int)slot.y].state  = emptySlot;
+        CGPoint location;
+        for (location.x = 0; location.x < COLUMNS; location.x++) {
+            for (location.y = 0; location.y < ROWS; location.y++) {
+                matrix[(int)location.x][(int)location.y]        = [GamePiece new];
+                [self setPieceState:empty forLocation:location];
             }
         }
         
@@ -72,13 +72,18 @@
 -(BOOL)addPieceWithState:(enum State)state forColumn:(NSInteger)column {
     
     for (int i = 0; i < 6; i++) {
-        if (matrix[column][i].state == emptySlot) {
+        if (matrix[column][i].state == empty) {
             matrix[column][i].state = state;
             return YES;
         }
     }
     
     return NO;
+}
+
+-(void)setPieceState:(enum State)state forLocation:(CGPoint)location   {
+    matrix[(int)location.x][(int)location.y].state = state;
+    return;
 }
 
 -(GamePiece *)viewAt:(CGPoint)location {

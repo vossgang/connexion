@@ -10,7 +10,6 @@
 #import "GameBoard.h"
 #import "GamePiece.h"
 #import "Player.h"
-#import "GamePieceView.h"
 
 #define CIRCLE_SIZE 45.5
 
@@ -45,7 +44,7 @@
         for (locationInMatrix.y = 0; locationInMatrix.y < 6; locationInMatrix.y++) {
             
             [_gameBoard setFrame:CGRectMake(xCoordinate, yCoordinate, CIRCLE_SIZE, CIRCLE_SIZE) forPieceAt:locationInMatrix];
-            [_gameBoard setState:emptySlot forPieceAt:locationInMatrix];
+            [_gameBoard setState:empty forPieceAt:locationInMatrix];
             [self.view addSubview:[_gameBoard viewAt:locationInMatrix]];
             
             yCoordinate = yCoordinate + CIRCLE_SIZE;
@@ -70,38 +69,50 @@
     for (UITouch *touch in touches) {
         CGPoint touchPoint = [touch locationInView:self.view];
         
-        if (touchPoint.x < 45.5) {
-            [_gameBoard addPieceWithState:redPiece forColumn:0];
-            return;
-        }
-        if (touchPoint.x > 45.5 && touchPoint.x < 91) {
-            [_gameBoard addPieceWithState:redPiece forColumn:1];
-            return;
-        }
+        NSInteger touchStripe = CIRCLE_SIZE;
         
-        if (touchPoint.x > 91 && touchPoint.x < 136.5) {
-            [_gameBoard addPieceWithState:redPiece forColumn:2];
+        if (touchPoint.x < touchStripe) {
+            [_gameBoard addPieceWithState:red forColumn:0];
+            return;
+        }
+        if (touchPoint.x > touchStripe && touchPoint.x < touchStripe + CIRCLE_SIZE) {
+            [_gameBoard addPieceWithState:red forColumn:1];
             return;
         }
         
+        touchStripe += CIRCLE_SIZE;
         
+        if (touchPoint.x > touchStripe && touchPoint.x < touchStripe + CIRCLE_SIZE) {
+            [_gameBoard addPieceWithState:red forColumn:2];
+            return;
+        }
+        
+        touchStripe += CIRCLE_SIZE;
+
         if (touchPoint.x > 136.5 && touchPoint.x < 182) {
-            [_gameBoard addPieceWithState:redPiece forColumn:3];
+            [_gameBoard addPieceWithState:red forColumn:3];
             return;
         }
         
+        touchStripe += CIRCLE_SIZE;
+
         if (touchPoint.x > 182 && touchPoint.x < 227) {
-            [_gameBoard addPieceWithState:redPiece forColumn:4];
+            [_gameBoard addPieceWithState:red forColumn:4];
             return;
         }
         
+        touchStripe += CIRCLE_SIZE;
+
         if (touchPoint.x > 227 && touchPoint.x < 273) {
-            [_gameBoard addPieceWithState:redPiece forColumn:5];
+            [_gameBoard addPieceWithState:red forColumn:5];
             return;
         }
+        
+        touchStripe += CIRCLE_SIZE;
+
         
         if (touchPoint.x > 273) {
-            [_gameBoard addPieceWithState:redPiece forColumn:6];
+            [_gameBoard addPieceWithState:red forColumn:6];
             return;
         }
     
@@ -117,23 +128,23 @@
 
 
 - (IBAction)columnC:(id)sender {
-    [_gameBoard addPieceWithState:redPiece forColumn:3];
+    [_gameBoard addPieceWithState:red forColumn:3];
 }
 
 - (IBAction)columnD:(id)sender {
-    [_gameBoard addPieceWithState:redPiece forColumn:4];
+    [_gameBoard addPieceWithState:red forColumn:4];
 }
 
 - (IBAction)columnE:(id)sender {
-    [_gameBoard addPieceWithState:redPiece forColumn:5];
+    [_gameBoard addPieceWithState:red forColumn:5];
 }
 
 - (IBAction)columnF:(id)sender {
-    [_gameBoard addPieceWithState:redPiece forColumn:6];
+    [_gameBoard addPieceWithState:red forColumn:6];
 }
 
 - (IBAction)columnG:(id)sender {
-    [_gameBoard addPieceWithState:redPiece forColumn:7];
+    [_gameBoard addPieceWithState:red forColumn:7];
 }
 
 @end
