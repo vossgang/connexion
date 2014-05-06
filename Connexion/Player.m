@@ -19,8 +19,6 @@
     return self;
 }
 
-
-
 -(id)initWithColor: (UIColor *)color andPieceCount: (NSInteger)count{
     
     if (self = [super init]) {
@@ -40,7 +38,6 @@
     }
     
     return self;
-    
 }
 
 

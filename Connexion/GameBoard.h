@@ -9,25 +9,26 @@
 #import <Foundation/Foundation.h>
 @class GamePiece;
 
+enum Turn {redTurn, blackTurn, start, end};
+
 @interface GameBoard : NSObject
 
-@property (nonatomic, strong) NSArray *pieces;
-@property (nonatomic, strong) NSArray *players;
-@property (nonatomic, strong) NSArray *slots;
+@property (nonatomic, readwrite) enum Turn turn;
+@property (nonatomic, readwrite) CGPoint lastPieceAddedToBoard;
+
 
 -(id)initWithEmptySlots;
-
-//-(void)playPiece:(GamePiece *)gamePiece atIndex:(NSIndexPath *)indexPath;
-
 -(BOOL)matrixIsNil;
 -(enum State)getStateForPieceAt: (CGPoint)location;
 -(void)setState: (enum State)state forPieceAt: (CGPoint)location;
+-(enum Turn)nextTurn;
 
-//returns 'NO' if a piece cannot be added to an existing columns
+-(BOOL)addPieceForColumn:(NSInteger)column;
 -(BOOL)addPieceWithState:(enum State)state forColumn:(NSInteger)column;
 
 -(void)setFrame:(CGRect)frame forPieceAt:(CGPoint)location;
 
 -(GamePiece *)viewAt:(CGPoint)location;
+-(BOOL)examineGameBoardForWinningCondition;
 
 @end

@@ -9,20 +9,19 @@
 #import <Foundation/Foundation.h>
 @class Player, GameBoard, GamePieceView;
 
-enum State {empty, red, black};
+enum State {empty, redPiece, blackPiece};
 
 @interface GamePiece : UIView
 
 @property (strong, nonatomic) UIColor       *color;
-//@property (weak, nonatomic) Player          *player;
-//@property (weak, nonatomic) GameBoard       *gameBoard;
 
 //bool flags
 @property(nonatomic, readwrite) BOOL isHighlighted;
 @property (nonatomic) enum State state;
 
-
 -(void)setState:(enum State)state;
+-(BOOL)isBlack;
+-(BOOL)isRed;
 
 +(GamePiece *)newPieceWithColor: (UIColor *)color;
 

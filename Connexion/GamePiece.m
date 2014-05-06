@@ -23,7 +23,7 @@
     _state = state;
     
     switch (_state) {
-        case black:
+        case blackPiece:
             self.backgroundColor = [UIColor darkGrayColor];
             self.layer.cornerRadius = self.frame.size.width / 2;
             self.clipsToBounds = YES;
@@ -31,7 +31,7 @@
             self.layer.borderColor = [UIColor blackColor].CGColor;
             break;
             
-        case red:
+        case redPiece:
             self.backgroundColor = [UIColor redColor];
             self.layer.cornerRadius = self.frame.size.width / 2;
             self.clipsToBounds = YES;
@@ -43,6 +43,16 @@
             self.backgroundColor = [UIColor clearColor];
             break;
     }
+}
+
+-(BOOL)isBlack {
+    if (_state == blackPiece) return YES;
+    return NO;
+}
+
+-(BOOL)isRed {
+    if (_state == redPiece) return YES;
+    return NO;
 }
 
 @end
