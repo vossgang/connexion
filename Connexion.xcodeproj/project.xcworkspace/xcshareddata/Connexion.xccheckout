@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>CF900C47-C17E-4A91-8601-1971DC076890</string>
+	<string>802C9589-E97F-4FB5-B56C-BDE04053C899</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Connexion</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>79ED2977-90CC-4CF7-8C2C-E414C183820E</key>
-		<string>ssh://github.com/candyforchris/connexion.git</string>
+		<key>EBF0F1DD-4B56-4178-9848-DF2950069C6E</key>
+		<string>ssh://github.com/vossgang/connexion.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Connexion.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>79ED2977-90CC-4CF7-8C2C-E414C183820E</key>
+		<key>EBF0F1DD-4B56-4178-9848-DF2950069C6E</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/candyforchris/connexion.git</string>
+	<string>ssh://github.com/vossgang/connexion.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>79ED2977-90CC-4CF7-8C2C-E414C183820E</string>
+	<string>EBF0F1DD-4B56-4178-9848-DF2950069C6E</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>79ED2977-90CC-4CF7-8C2C-E414C183820E</string>
+			<string>EBF0F1DD-4B56-4178-9848-DF2950069C6E</string>
 			<key>IDESourceControlWCCName</key>
-			<string>connexionGit</string>
+			<string>connexion</string>
 		</dict>
 	</array>
 </dict>

@@ -25,10 +25,11 @@
         
         _turn = redTurn;
         
+        CGFloat screenHeight = [[UIScreen mainScreen] bounds].size.height;
+        
         //initial setup
         CGFloat xCoordinate = 0.f;
-        CGFloat yCoordinate = 150.f;
-        
+        CGFloat yCoordinate = screenHeight - CIRCLE_SIZE;
         CGPoint locationInMatrix;
         
         //setup initial cell states
@@ -45,10 +46,10 @@
                 [self setFrame:CGRectMake(xCoordinate, yCoordinate, CIRCLE_SIZE, CIRCLE_SIZE) forPieceAt:locationInMatrix];
                 [self setState:empty forPieceAt:locationInMatrix];
                 
-                yCoordinate = yCoordinate + CIRCLE_SIZE;
+                yCoordinate = yCoordinate - CIRCLE_SIZE;
             } //end inner 'for loop'
             xCoordinate = xCoordinate + CIRCLE_SIZE;
-            yCoordinate = 150;
+            yCoordinate = screenHeight - CIRCLE_SIZE;
         } //end outer 'for loop'
         
     }
@@ -205,10 +206,73 @@
     return NO;
 }
 
--(BOOL)examineDiagonalForWinningCondition {
+-(BOOL)examineDiagonalForWinningCondition
+{
+    return ([self examineLeftDiagonalForWinningCondition] + [self examineRightDiagonalForWinningCondition]);
+}
+
+
+-(BOOL)examineLeftDiagonalForWinningCondition
+{
+    NSInteger X_location = _lastPieceAddedToBoard.x;
+    NSInteger Y_location = _lastPieceAddedToBoard.y;
+    
+    //get the bottom left diagonal location
+    while ((X_location > 0) && (Y_location > 0)) {
+        X_location--;
+        Y_location--;
+        
+    }
+    
+    NSInteger conjoinedPieces = 1;
+    
+    
+    for (int col = X_location, row = Y_location; col < COLUMNS-1 && row < ROWS-1; col++, row++) {
+        if (matrix[col][row].state != empty) {
+            if (matrix[col][row].state == matrix[col+1][row+1].state) {
+                conjoinedPieces++;
+                if (conjoinedPieces == 4) return YES;
+            } else {
+                conjoinedPieces = 1;
+            }
+        } else {
+            conjoinedPieces = 1;
+        }//end of IF_IS_Empty
+    }//end of FOR
+    
     return NO;
 }
 
+-(BOOL)examineRightDiagonalForWinningCondition
+{
+    NSInteger X_location = _lastPieceAddedToBoard.x;
+    NSInteger Y_location = _lastPieceAddedToBoard.y;
+    
+    //get the bottom left diagonal location
+    while ((X_location < COLUMNS) && (Y_location > 0)) {
+        X_location++;
+        Y_location--;
+        
+    }
+    
+    NSInteger conjoinedPieces = 1;
+    
+    
+    for (int col = X_location, row = Y_location; col > 1 && row < ROWS-1; col--, row++) {
+        if (matrix[col][row].state != empty) {
+            if (matrix[col][row].state == matrix[col-1][row+1].state) {
+                conjoinedPieces++;
+                if (conjoinedPieces == 4) return YES;
+            } else {
+                conjoinedPieces = 1;
+            }
+        } else {
+            conjoinedPieces = 1;
+        }//end of IF_IS_Empty
+    }//end of FOR
+    
+    return NO;
+}
 
 
 @end
