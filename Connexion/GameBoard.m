@@ -11,7 +11,6 @@
 #import "GamePiece.h"
 #import "Constants.h"
 
-
 @interface GameBoard () {
     GamePiece *matrix[COLUMNS][ROWS];
 }
