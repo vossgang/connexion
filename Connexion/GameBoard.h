@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Constants.h"
+
 @class GamePiece;
 
-enum Turn {redTurn, blackTurn, start, end};
 
 @interface GameBoard : NSObject
 

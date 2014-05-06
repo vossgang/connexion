@@ -10,8 +10,7 @@
 #import "GameBoard.h"
 #import "GamePiece.h"
 #import "Player.h"
-
-#define CIRCLE_SIZE 45.5
+#import "Constants.h"
 
 @interface ViewController ()
 
@@ -34,8 +33,8 @@
     CGPoint locationInMatrix;
     
     //setup initial cell states
-    for (locationInMatrix.x = 0; locationInMatrix.x < 7; locationInMatrix.x++) {
-        for (locationInMatrix.y = 0; locationInMatrix.y < 6; locationInMatrix.y++) {
+    for (locationInMatrix.x = 0; locationInMatrix.x < COLUMNS; locationInMatrix.x++) {
+        for (locationInMatrix.y = 0; locationInMatrix.y < ROWS; locationInMatrix.y++) {
             [self.view addSubview:[_gameBoard viewAt:locationInMatrix]];
         }
     }

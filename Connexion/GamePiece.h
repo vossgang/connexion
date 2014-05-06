@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-@class Player, GameBoard, GamePieceView;
+#import "Constants.h"
 
-enum State {empty, redPiece, blackPiece};
+@class Player, GameBoard, GamePieceView;
 
 @interface GamePiece : UIView
 

@@ -9,10 +9,8 @@
 #import "GameBoard.h"
 #import "Player.h"
 #import "GamePiece.h"
+#import "Constants.h"
 
-#define CIRCLE_SIZE 45.5
-#define ROWS 6
-#define COLUMNS 7
 
 @interface GameBoard () {
     GamePiece *matrix[COLUMNS][ROWS];
@@ -110,7 +108,7 @@
 
 -(BOOL)addPieceWithState:(enum State)state forColumn:(NSInteger)column {
     
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < ROWS; i++) {
         if (matrix[column][i].state == empty) {
             matrix[column][i].state = state;
             _lastPieceAddedToBoard = CGPointMake(column, i);
@@ -168,18 +166,18 @@
 
 -(BOOL)examineRowForWinningCondition {
     NSInteger row               = _lastPieceAddedToBoard.x;
-    NSInteger conjoinedPieces   = 0;
+    NSInteger conjoinedPieces   = 1;
     
-    for (int i = 0; i < ROWS-1; i++) {
-        if (matrix[i][row].state != empty) {
-            if (matrix[i][row].state == matrix[i+1][row].state) {
+    for (int column = 0; column < ROWS-1; column++) {
+        if (matrix[row][column].state != empty) {
+            if (matrix[row][column].state == matrix[row][column+1].state) {
                 conjoinedPieces++;
-                if (conjoinedPieces == 3) return YES;
+                if (conjoinedPieces == 4) return YES;
             } else {
-                conjoinedPieces = 0;
+                conjoinedPieces = 1;
             }
         } else {
-            conjoinedPieces = 0;
+            conjoinedPieces = 1;
         }
     }
     
@@ -189,18 +187,18 @@
 
 -(BOOL)examineColumnForWinningCondition {
     NSInteger column            = _lastPieceAddedToBoard.y;
-    NSInteger conjoinedPieces   = 0;
+    NSInteger conjoinedPieces   = 1;
     
-    for (int i = 0; i < COLUMNS-1; i++) {
-        if (matrix[column][i].state != empty) {
-            if (matrix[column][i].state == matrix[column][i+1].state) {
+    for (int row = 0; row < COLUMNS-1; row++) {
+        if (matrix[row][column].state != empty) {
+            if (matrix[row][column].state == matrix[row+1][column].state) {
                 conjoinedPieces++;
-                if (conjoinedPieces == 3) return YES;
+                if (conjoinedPieces == 4) return YES;
             } else {
-                conjoinedPieces = 0;
+                conjoinedPieces = 1;
             }
         } else {
-            conjoinedPieces = 0;
+            conjoinedPieces = 1;
         }
     }
     
