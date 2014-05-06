@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BC0312719197E7500802723 /* tokenButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC0312619197E7500802723 /* tokenButton.m */; };
+		1BC0312A19197F4800802723 /* StyleKitName.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC0312919197F4800802723 /* StyleKitName.m */; };
 		1BE2F1BF1917F304009FB85F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE2F1BE1917F304009FB85F /* Foundation.framework */; };
 		1BE2F1C11917F304009FB85F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE2F1C01917F304009FB85F /* CoreGraphics.framework */; };
 		1BE2F1C31917F304009FB85F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE2F1C21917F304009FB85F /* UIKit.framework */; };
@@ -41,6 +43,10 @@
 
 /* Begin PBXFileReference section */
 		1BC031221919759D00802723 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		1BC0312519197E7500802723 /* tokenButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tokenButton.h; sourceTree = "<group>"; };
+		1BC0312619197E7500802723 /* tokenButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tokenButton.m; sourceTree = "<group>"; };
+		1BC0312819197F4800802723 /* StyleKitName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleKitName.h; sourceTree = "<group>"; };
+		1BC0312919197F4800802723 /* StyleKitName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleKitName.m; sourceTree = "<group>"; };
 		1BE2F1BB1917F304009FB85F /* Connexion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Connexion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BE2F1BE1917F304009FB85F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1BE2F1C01917F304009FB85F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -177,7 +183,11 @@
 		1BE2F1F41917F5B3009FB85F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1BC0312819197F4800802723 /* StyleKitName.h */,
+				1BC0312919197F4800802723 /* StyleKitName.m */,
 				1BE2F1D01917F304009FB85F /* Main.storyboard */,
+				1BC0312519197E7500802723 /* tokenButton.h */,
+				1BC0312619197E7500802723 /* tokenButton.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -296,9 +306,11 @@
 				1BE2F1FF1917F6B1009FB85F /* GamePiece.m in Sources */,
 				1BE2F1D51917F304009FB85F /* ViewController.m in Sources */,
 				1BE2F2031917F6BF009FB85F /* GameBoard.m in Sources */,
+				1BC0312A19197F4800802723 /* StyleKitName.m in Sources */,
 				1BE2F1CF1917F304009FB85F /* AppDelegate.m in Sources */,
 				1BE2F2071917F6CE009FB85F /* Player.m in Sources */,
 				1BE2F1CB1917F304009FB85F /* main.m in Sources */,
+				1BC0312719197E7500802723 /* tokenButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
